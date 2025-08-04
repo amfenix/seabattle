@@ -1,0 +1,52 @@
+@use 'src/sass/variables' as *;
+@use 'src/sass/mixins';
+
+.button {
+	border: 1px solid transparent;
+	border-radius: 0.25rem;
+	box-sizing: border-box;
+	padding: 0.5rem 1rem;
+
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out;
+	text-transform: uppercase;
+
+	@include mixins.hoverableBackground;
+}
+
+.text {
+	background-color: $background;
+	color: $baseFontColor;
+}
+
+.secondary {
+	background-color: $secondary;
+	color: $primary;
+
+	&:hover {
+		background-color: darken($secondary, 25%);
+	}
+
+	&:disabled:hover {
+		background-color: $secondary;
+	}
+}
+
+.primary {
+	background-color: $primary;
+	color: $background;
+
+	&:hover {
+		background-color: lighten($primary, 30%);
+	}
+
+	&:disabled:hover {
+		background-color: $primary;
+	}
+}
+
+.outlined {
+	background-color: $background;
+	color: $baseFontColor;
+	border-color: $primary;
+}

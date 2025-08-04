@@ -1,0 +1,59 @@
+@use 'src/sass/variables' as *;
+@use 'src/sass/mixins';
+
+.container {
+	position: relative;
+    display: flex;
+    width: min-content;
+}
+
+.table {
+  border-top: $tableBorder;
+  border-left: $tableBorder;
+  border-spacing: 0;
+}
+
+.cell {
+  background-color: $cellBackground;
+  border-right: $tableBorder;
+  border-bottom: $tableBorder;
+  width: $cellSize;
+  height: $cellSize;
+  min-width: $cellSize;
+  text-align: center;
+  padding: 0;
+}
+
+.label {
+  background-color: $cellLabelBackground;
+}
+
+.overlay {
+  @include mixins.overlay;
+  background-color: $overlayBackground;
+  transition: background 1s ease;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  &::after {
+    content: " ";
+    display: block;
+    width: $overlayIconSize;
+    height: $overlayIconSize;
+  }
+
+  &.waitGame::after {
+    @include mixins.background('../../images/rotate.svg');
+    animation: rotate 4s linear infinite;
+  }
+
+  &.waitStep::after {
+    @include mixins.background('../../images/clock.svg');
+  }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg) }
+}

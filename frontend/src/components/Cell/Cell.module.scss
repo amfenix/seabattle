@@ -1,0 +1,33 @@
+@use 'src/sass/variables' as *;
+@use 'src/sass/mixins';
+
+.container {
+  width: $cellSize;
+  height: $cellSize;
+  position: relative;
+}
+
+.missed {
+  @include mixins.background('../../images/missed.svg');
+}
+.ship {
+  @include mixins.background('../../images/ship.svg');
+}
+.sinked {
+  @include mixins.background('../../images/sinked.svg');
+}
+
+.allowed::after, .denied::after {
+  content: " ";
+  @include mixins.overlay;
+  display: block;
+  opacity: 0.5;
+}
+
+.allowed::after {
+  background-color: $allow;
+}
+
+.denied::after {
+  background-color: $deny;
+}

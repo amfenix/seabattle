@@ -1,0 +1,25 @@
+@use './vendor/normalize.css';
+@use './sass/variables' as *;
+@use './vendor/ys/fonts.css';
+@use './vendor/fa/Glyphter.css';
+
+html,
+body,
+#root {
+	height: 100%;
+}
+
+body {
+	color: $baseFontColor;
+	font-size: $baseFontSize;
+	font-family: $font;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+}
+
+code {
+	font-family: $fontMono;
+}

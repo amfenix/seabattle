@@ -1,0 +1,42 @@
+@use 'src/sass/variables' as *;
+@use 'src/sass/mixins';
+
+.container {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.header {
+	@include mixins.container;
+	justify-content: space-between;
+
+	h1 {
+		font-size: 1.5rem;
+		font-weight: 600;
+		margin: 0;
+	}
+}
+
+.main {
+	@include mixins.container;
+	flex-grow: 1;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.footer {
+	@include mixins.container;
+	justify-content: space-between;
+}
+
+.logo {
+	display: block;
+	height: 1.2rem;
+}
+
+.madeby {
+	display: flex;
+	justify-content: flex-start;
+	gap: 0.5rem;
+}

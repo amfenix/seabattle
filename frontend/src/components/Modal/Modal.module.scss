@@ -1,0 +1,39 @@
+@use 'src/sass/variables' as *;
+@use 'src/sass/mixins';
+
+.modal {
+	@include mixins.overlay;
+	display: flex;
+	background-color: $overlayBackground;
+	z-index: 100;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	width: 60vmin;
+	background: $background;
+	border: $panelBorder;
+	padding: 1rem 2rem;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.up {
+	margin-top: -25%;
+}
+
+.close {
+	position: absolute;
+	top: 0.25rem;
+	right: 0.25rem;
+	display: block;
+	font-size: 0.75rem;
+	cursor: pointer;
+	border: 0;
+	background: transparent;
+	padding: 0;
+
+	@include mixins.hoverableColor;
+}

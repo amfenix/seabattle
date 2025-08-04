@@ -1,0 +1,121 @@
+{
+	"name": "template-yandex-react",
+	"version": "1.0.0",
+	"private": true,
+	"homepage": ".",
+	"dependencies": {
+		"@testing-library/jest-dom": "^5.14.1",
+		"@testing-library/react": "^13.0.0",
+		"@testing-library/user-event": "^13.2.1",
+		"clsx": "^1.2.1",
+		"env-cmd": "^10.1.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-scripts": "5.0.1",
+		"sea-battle-common": "../common/",
+		"socket.io-client": "^4.6.2",
+		"web-vitals": "^2.1.0"
+	},
+	"scripts": {
+		"start": "env-cmd -f ../.env react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"lint": "eslint --ext .js,.jsx ./src",
+		"lint:fix": "npm run lint -- --fix",
+		"format": "prettier ./src --write",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build",
+		"publish": "gh-pages -d build",
+		"docs": "gh-pages -d storybook-static -b docs"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest",
+			"airbnb",
+			"airbnb/hooks",
+			"prettier",
+			"plugin:storybook/recommended"
+		],
+		"rules": {
+			"react/jsx-filename-extension": [
+				1,
+				{
+					"extensions": [
+						".js",
+						".jsx"
+					]
+				}
+			],
+			"import/extensions": "off",
+			"import/no-unresolved": "off",
+			"react/react-in-jsx-scope": "off",
+			"import/prefer-default-export": "off",
+			"react/function-component-definition": "off",
+			"react/jsx-props-no-spreading": "off",
+			"react/no-unescaped-entities": "off",
+			"react/button-has-type": "off",
+			"react/require-default-props": "off",
+			"import/no-extraneous-dependencies": "off",
+			"react/jsx-fragments": "off",
+			"no-unused-vars": "off",
+			"no-undef": "off",
+			"no-empty-pattern": "off",
+			"jsx-a11y/label-has-associated-control": "off",
+			"react/prop-types": "off",
+			"jsx-a11y/click-events-have-key-events": "off",
+			"jsx-a11y/no-static-element-interactions": "off"
+		},
+		"overrides": [
+			{
+				"files": [
+					"**/*.stories.*",
+					"src/stories/**/*"
+				],
+				"rules": {
+					"import/no-anonymous-default-export": "off",
+					"import/no-extraneous-dependencies": "off",
+					"no-unused-vars": "off"
+				}
+			}
+		],
+		"globals": {
+			"JSX": true,
+			"React": true
+		}
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"@babel/plugin-proposal-private-property-in-object": "^7.21.10",
+		"@storybook/addon-essentials": "7.0.18",
+		"@storybook/addon-interactions": "7.0.18",
+		"@storybook/addon-links": "7.0.18",
+		"@storybook/blocks": "7.0.18",
+		"@storybook/preset-create-react-app": "7.0.18",
+		"@storybook/react": "7.0.18",
+		"@storybook/react-webpack5": "7.0.18",
+		"@storybook/testing-library": "0.0.14-next.2",
+		"babel-plugin-named-exports-order": "0.0.2",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-storybook": "^0.6.12",
+		"gh-pages": "^5.0.0",
+		"prettier": "^2.8.8",
+		"prop-types": "15.8.1",
+		"sass": "^1.62.1",
+		"storybook": "7.0.18",
+		"webpack": "5.84.1"
+	}
+}

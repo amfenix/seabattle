@@ -1,0 +1,11 @@
+html,
+body,
+#storybook-root {
+	height: 100%;
+}
+
+.storybook-case-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}

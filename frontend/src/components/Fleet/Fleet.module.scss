@@ -1,0 +1,44 @@
+@use 'src/sass/variables' as *;
+@use 'src/sass/mixins';
+
+.container {
+  h2, p {
+    text-align: left;
+    margin: 0;
+    padding-left: $fleetAmountSize;
+  }
+  p {
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  cursor: pointer;
+
+  span {
+    width: $fleetAmountSize;
+    font-size: 1.2rem;
+  }
+
+  &.selected {
+    background-color: $allow;
+  }
+
+  &.placed {
+    opacity: 0.2;
+  }
+}
+
+.ship {
+  --shipSize: 1;
+  @include mixins.background('../../images/ship.svg');
+  background-repeat: repeat;
+  border: 0;
+  width: calc(var(--shipSize) * #{$cellSize});
+  height: $cellSize;
+  cursor: pointer;
+}

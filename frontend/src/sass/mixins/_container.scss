@@ -1,0 +1,17 @@
+@use '../variables' as *;
+
+@mixin panel($align: center, $justify: center, $padding: $defaultPadding) {
+	display: flex;
+	align-items: $align;
+	justify-content: $justify;
+	padding: $padding;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+@mixin container($align: center, $justify: center, $padding: $defaultPadding) {
+	@include panel($align, $justify, $padding);
+
+	max-width: $maxPageWidth;
+	margin: auto;
+}
